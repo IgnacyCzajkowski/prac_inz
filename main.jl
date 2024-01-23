@@ -254,9 +254,9 @@ function main_beta(gamma::Float64, network_params, observer_count::Int, beta_sta
         end
         
         prec_avg_kor = sum(prec_avg_vect_kor) / length(prec_avg_vect_kor)
-        std_dev_prec_kor = std(prec_avg_vect_kor) / length(prec_avg_vect_kor)
+        std_dev_prec_kor = std(prec_avg_vect_kor) / sqrt(length(prec_avg_vect_kor))
         rank_avg_kor = sum(rank_avg_vect_kor) / length(rank_avg_vect_kor)
-        std_dev_rank_kor = std(rank_avg_vect_kor) / length(rank_avg_vect_kor)
+        std_dev_rank_kor = std(rank_avg_vect_kor) / sqrt(length(rank_avg_vect_kor))
         println("srednia Precyzja (korelacyjny):  ", prec_avg_kor, " +/-: ", std_dev_prec_kor)
         println("sredni Ranking (korelacyjny):  ", rank_avg_kor, " +/-: ", std_dev_rank_kor)
 
